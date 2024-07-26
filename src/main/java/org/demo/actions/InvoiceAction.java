@@ -25,5 +25,21 @@ public class InvoiceAction extends ActionSupport  {
         if (invoiceBean.getSubject().isEmpty()) {
             addFieldError("invoiceBean.subject", "El concepto es obligatorio.");
         }
+        if (invoiceBean.getDateFrom() == null) {
+            addFieldError("invoiceBean.dateFrom", "La fecha desde es obligatoria.");
+        }
+        if (invoiceBean.getDateTo() == null) {
+            addFieldError("invoiceBean.dateTo", "La fecha hasta es obligatoria.");
+        }
+        if (invoiceBean.getAmount() == null) {
+            addFieldError("invoiceBean.amount", "El importe es obligatorio.");
+        } else if (invoiceBean.getAmount() <= 0.0) {
+            addFieldError("invoiceBean.amount", "El importe tiene que ser mayor que cero.");
+        }
+
+
+
+
+
     }
 }

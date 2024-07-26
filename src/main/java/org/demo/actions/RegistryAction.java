@@ -26,6 +26,8 @@ public class RegistryAction extends ActionSupport {
     private String message;
     private String formTittleMessage;
 
+
+
     public String getFormTittleMessage() {
         return formTittleMessage;
     }
@@ -51,4 +53,6 @@ public class RegistryAction extends ActionSupport {
     public void setMessage(String message) {
         this.message = message;
     }
+
+
 }

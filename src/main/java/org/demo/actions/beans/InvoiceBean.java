@@ -7,6 +7,9 @@ public class InvoiceBean {
     private String subject;
     private Date dateFrom;
     private Date dateTo;
+    private Double amount;
+    private double vatRate = 0.21;
+
 
     public Date getDateFrom() {
         return dateFrom;
@@ -24,11 +27,22 @@ public class InvoiceBean {
         this.dateTo = dateTo;
     }
 
-    public String getSubject() {
-        return subject;
-    }
-
+    public String getSubject() {return subject;}
     public void setSubject(String subject) {
         this.subject = subject;
     }
+
+    public Double getAmount() {
+        if (this.amount == null) {
+            return this.amount;
+        }
+        return getTotalWithVAT();
+
+    }
+    public void setAmount(Double amount) {this.amount = amount;}
+
+    public double getTotalWithVAT() {
+        return amount + (amount * vatRate);
+    }
+
 }
